@@ -1,0 +1,28 @@
+.button-rename {
+  cursor: pointer;
+  width: 100px;
+  height: max-content;
+  padding: 6px 10px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--seventh-opacity-color);
+
+  color: var(--dropDown-text-color);
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 12px;
+  outline: 1px solid var(--seventh-color);
+  box-shadow: 0 0 10px 0px var(--sixth-color);
+  transition: all 150ms ease-in-out;
+
+  &:hover {
+    outline: 1px solid var(--dropDown-border-green-color);
+    color: var(--dropDown-border-green-color);
+    box-shadow:
+      0 0 20px 0 var(--sixth-color) inset,
+      0 0 15px 0px var(--dropDown-shadow-green-color);
+  }
+}

@@ -1,0 +1,65 @@
+.checkbox {
+  width: 100%;
+  height: max-content;
+  display: flex;
+  align-items: center;
+
+  &__hidden {
+    display: none;
+  }
+
+  &__label {
+    cursor: pointer;
+    position: relative;
+    align-items: center;
+    font-size: 12px;
+    line-height: 110%;
+    color: var(--font-first-color);
+  }
+
+  &__slider {
+    position: relative;
+    width: 40px;
+    min-width: 40px;
+    height: 20px;
+    margin: 0px 10px 0px 0px;
+    display: flex;
+    background-color: var(--tenth-color);
+    border-radius: 20px;
+    outline: 1px solid var(--font-first-color);
+    overflow: hidden;
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0px;
+      height: 20px;
+      transition: all 0.3s linear;
+    }
+
+    &::after {
+      content: "";
+      width: 20px;
+      border-radius: 50%;
+      background-color: var(--sixth-color);
+      outline: 1px solid var(--font-first-color);
+    }
+
+    &::before {
+      width: 100%;
+      background-color: var(--dropdown-bg-color-active);
+      transform-origin: left;
+      transform: scaleX(0);
+    }
+  }
+
+  &__hidden:checked + &__slider::after {
+    transform: translateX(20px);
+    background-color: var(--dropDown-border-green-color);
+  }
+
+  &__hidden:checked + &__slider::before {
+    transform: scaleX(1);
+  }
+}

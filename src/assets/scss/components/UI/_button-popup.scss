@@ -1,0 +1,52 @@
+.popup {
+  &__btn-container {
+    margin: auto;
+    width: max-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+  }
+
+  &__form-btn {
+    cursor: pointer;
+    margin: 15px 0px 5px;
+    padding: 10px 20px;
+    display: flex;
+    align-self: center;
+
+    font-family: var(--font-family);
+    font-size: 16px;
+    font-weight: 800;
+    line-height: 100%;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 700;
+
+    border-radius: 10px;
+    border: 2px solid var(--seventh-color);
+    color: #fff;
+    box-shadow:
+      0 0 40px 40px var(--sixth-color) inset,
+      0 0 0 0 var(--seventh-color);
+    transition: all 150ms ease-in-out;
+
+    &:hover {
+      color: var(--sixth-color);
+      box-shadow:
+        0 0 10px 0 var(--sixth-color) inset,
+        0 0 10px 4px var(--seventh-color);
+    }
+  }
+
+  &__error-text-block {
+    width: 100%;
+    min-height: 15px;
+    text-align: center;
+    color: var(--eighth-color);
+    font-family: var(--font-family);
+    font-weight: 800;
+    font-size: 14px;
+    line-height: 100%;
+  }
+}

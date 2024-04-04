@@ -1,0 +1,94 @@
+.user-accesses-card {
+  width: 100%;
+  height: max-content;
+  padding: 5px 10px;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 5px;
+  outline: 1px solid var(--font-first-color);
+
+  &:hover {
+    outline: 1px solid var(--dropDown-shadow-green-color);
+    box-shadow:
+      0 0 20px 0 var(--sixth-color) inset,
+      0 0 10px 0px var(--dropDown-shadow-green-color);
+  }
+
+  &_active {
+    outline: 1px solid var(--dropDown-border-green-color);
+    background-color: var(--tenth-color);
+    box-shadow:
+      0 0 15px 0 var(--dropdown-bg-color-active) inset,
+      0 0 5px 2px var(--dropDown-shadow-green-color);
+  }
+
+  &__data-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  &__btn-group {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  &__btn-group-text {
+    cursor: default;
+    margin: auto;
+    padding: 3px 7px;
+    display: flex;
+    align-items: center;
+    outline: 1px dashed var(--font-first-color);
+    border-radius: 5px;
+    color: var(--font-first-color);
+  }
+
+  &__btn {
+    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 10px;
+    width: 65px;
+    height: max-content;
+    padding: 4px 5px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: var(--font-family);
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 12px;
+    transition: all 150ms ease-in-out;
+  }
+  &__btn-accesses {
+    background-color: var(--eleventh-opacity-color);
+    color: var(--dropDown-text-color);
+    outline: 1px solid var(--eleventh-color);
+    box-shadow: 0 0 10px 0px var(--eleventh-shadow-color);
+
+    &:hover {
+      outline: 1px solid var(--eleventh-shadow-color);
+      color: var(--eleventh-dark-color);
+      box-shadow:
+        0 0 20px 0 var(--sixth-color) inset,
+        0 0 15px 0px var(--eleventh-color);
+    }
+  }
+
+  &__btn-delete {
+    background-color: var(--fifth-color);
+    color: var(--dropDown-text-color);
+    outline: 1px solid var(--eighth-color);
+    box-shadow: 0 0 10px 0px var(--sixth-color);
+
+    &:hover {
+      color: var(--eighth-color);
+      box-shadow:
+        0 0 20px 0 var(--sixth-color) inset,
+        0 0 15px 0px var(--eighth-color);
+    }
+  }
+}

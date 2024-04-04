@@ -1,0 +1,218 @@
+@import "./fonts.scss";
+@import "./variables.scss";
+
+@import "./components/UI/button-popup.scss";
+@import "./components/UI/button-checkbox.scss";
+@import "./components/UI/notification-window.scss";
+@import "./components/UI/error-popup.scss";
+@import "./components/UI/exit-popup.scss";
+@import "./components/UI/button-change.scss";
+@import "./components/UI/button-rename.scss";
+@import "./components/UI/button-delete.scss";
+@import "./components/UI/confirmation-deletion.scss";
+@import "./components/UI/theme-switcher.scss";
+@import "./components/UI/board-info.scss";
+@import "./components/UI/user-accesses.scss";
+
+@import "./components/popup-todo-list.scss";
+@import "./components/popup-user.scss";
+@import "./components/navigation-menu.scss";
+@import "./components/list-boards.scss";
+@import "./components/tasklist-header.scss";
+@import "./components/column-tasks.scss";
+@import "./components/cards-task.scss";
+@import "./components/board-administration.scss";
+
+@import "./page/_auth.scss";
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0px;
+  font-weight: normal;
+}
+
+*::-webkit-scrollbar {
+  width: 4px;
+  height: 7px;
+}
+
+*::-webkit-scrollbar-track {
+  background: rgba(234, 234, 234, 0.233);
+  border-radius: 20px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: rgba(47, 47, 47, 0.161);
+  border-radius: 20px;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+body.click-ban {
+  * {
+    pointer-events: none;
+  }
+}
+
+#app {
+  width: 100%;
+  height: 100%;
+  background-color: var(--first-color);
+
+  font-family: "exo2";
+  color: var(--color-text);
+  line-height: 1.6;
+  font-family: var(--font-family), var(--second-family), "Helvetica Neue", sans-serif;
+  font-size: 15px;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition:
+    color 0.5s,
+    background-color 0.5s;
+}
+
+.tasklist-content {
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+main {
+  width: 75%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.err-input {
+  outline: 2px solid var(--eighth-color);
+  background-color: var(--fifth-opacity-color);
+}
+
+.confirmed-input {
+  outline: 2px solid var(--seventh-color);
+  background-color: var(--seventh-opacity-color);
+  pointer-events: none;
+}
+
+.confirmed-input-btn {
+  pointer-events: none;
+}
+
+.drop-btn-group {
+  z-index: 10;
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  right: 0px;
+  bottom: 110%;
+  width: max-content;
+  height: max-content;
+  padding: 5px 25px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  border-radius: 5px;
+  background-color: var(--dropDown-color);
+  outline: 1px solid var(--second-color);
+
+  transition: all 0.3s linear;
+
+  &_visible {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+.list-column__container{
+  .drop-btn-group{
+    top: 110%;
+    bottom: unset;
+  }
+}
+
+.change-btn {
+  position: relative;
+  width: 23px;
+  height: 23px;
+  outline: 1px solid var(--font-first-color);
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  img {
+    width: 100%;
+    height: 100%;
+  }
+  &:hover {
+    outline: 1px solid var(--seventh-color);
+    box-shadow: 
+    0 0 20px -15px var(--dropDown-border-green-color) inset,
+    0 0 10px 1px var(--seventh-color);
+    img {
+      animation: rotate 0.5s linear 1;
+    }
+  }
+  .list-boards__board_active & {
+    outline: 1px solid var(--black-color);
+    &:hover {
+      outline: 1px solid var(--seventh-color);
+      box-shadow: 
+      0 0 20px -5px var(--second-color) inset,
+      0 0 10px 1px var(--seventh-color);
+    }
+  }
+
+  .list-boards__board:not(.list-boards__board_active) & {
+    cursor: default;
+    pointer-events: none;
+    &:hover {
+      outline: 1px solid var(--second-color);
+      color: var(--font-first-color);
+      box-shadow: unset;
+    }
+  }
+}
+
+body.dark-theme {
+  background-color: #2b2b30;
+
+  --first-color: #252525;
+  --third-color: #bebebe;
+  --font-first-color: #ffffff;
+  --font-second-color: #d8dbec80;
+  --tenth-color: rgba(216, 216, 216, 0.435);
+
+  .main-task-header__search,
+  .main-task-header__notifications,
+  .main-task-header__date,
+  .card-task__progress-btn,
+  .card-task__comments {
+    img {
+      filter: invert(100%) sepia(100%) saturate(38%) hue-rotate(254deg) brightness(110%) contrast(110%);
+    }
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  50% {
+    transform: rotateZ(-90deg);
+  }
+  100% {
+    transform: rotateZ(0deg);
+  }
+}

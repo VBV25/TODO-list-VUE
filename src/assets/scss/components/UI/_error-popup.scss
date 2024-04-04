@@ -1,0 +1,20 @@
+.error-popup-mini {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  width: 300px;
+  height: 100px;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: var(--font-third-color);
+  outline: 2px solid var(--eighth-color);
+  font-family: var(--font-family);
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 100%;
+  color: var(--eighth-color);
+  box-shadow: 0px 0px 100px 20px var(--fifth-color) inset;
+}

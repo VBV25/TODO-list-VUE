@@ -1,0 +1,203 @@
+.card-task {
+  position: relative;
+  z-index: 5;
+  width: 95%;
+  height: max-content;
+  min-height: 170px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background-color: var(--first-color);
+  outline: 2px dashed var(--third-color);
+  border-radius: 10px;
+
+  &__container {
+    width: 100%;
+    height: 100%;
+    padding: 12px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 8px;
+    background-color: var(--first-color);
+    outline: 2px solid var(--third-color);
+    border-radius: 10px;
+    transition: all 0.2s linear;
+
+    &:hover {
+      transform: scale(1.02);
+      box-shadow: -2px 2px 5px 2px var(--third-color);
+    }
+  }
+
+  &__progress-text-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  &__title-group {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__title {
+    cursor: default;
+    width: max-content;
+    max-width: 85%;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+
+    font-family: var(--font-family);
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 18px;
+    color: var(--font-first-color);
+  }
+
+  &__description {
+    cursor: default;
+    max-width: 100%;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+
+    font-family: var(--font-family);
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    color: var(--font-second-color);
+  }
+
+  &__progress-info-group {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__progress-info {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__progress-btn {
+    cursor: default;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: var(--font-family);
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 100%;
+    color: var(--font-second-color);
+
+    img {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  &__progress-line {
+    position: relative;
+    width: 100%;
+    height: 4px;
+    margin: 6px 0px;
+    overflow: hidden;
+
+    border-radius: 5px;
+    background-color: var(--third-color);
+  }
+
+  &__progress-slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 5px;
+    height: 4px;
+
+    border-radius: 5px;
+    background-color: var(--fourth-color);
+
+    animation: progress-slider-animate 12s linear infinite;
+  }
+
+  &__footer-card {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  &__date {
+    cursor: default;
+    width: max-content;
+    height: 30px;
+    padding: 8px 16px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-self: flex-start;
+    background-color: var(--fourth-opacity-color);
+    border-radius: 17px;
+
+    font-family: var(--font-family);
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 100%;
+    color: var(--fourth-color);
+
+    &.overdue-deadlines {
+      color: var(--fifth-color);
+      background-color: var(--fifth-opacity-color);
+    }
+
+    &.burning-deadlines {
+      color: var(--fourth-color);
+      background-color: var(--fourth-opacity-color);
+    }
+
+    &.acceptable-deadlines {
+      color: var(--seventh-color);
+      background-color: var(--seventh-opacity-color);
+    }
+  }
+
+  &__comments {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3px;
+
+    font-family: var(--second-family);
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 100%;
+    color: var(--font-second-color);
+    img {
+      width: 18px;
+      height: auto;
+    }
+  }
+}
+
+@keyframes progress-slider-animate {
+  0%,
+  100% {
+    width: 1%;
+  }
+  50% {
+    width: 80%;
+  }
+}

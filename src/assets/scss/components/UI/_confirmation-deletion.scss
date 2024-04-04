@@ -1,0 +1,93 @@
+.confirmation-deletion-popup {
+  z-index: 200;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0px;
+  left: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--bg-popup-color);
+  &__container {
+    width: max-content;
+    height: max-content;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    border-radius: 20px;
+    background-color: var(--first-color);
+  }
+  &__title {
+    cursor: default;
+    margin-bottom: 10px;
+    color: var(--font-first-color);
+    font-family: var(--font-family);
+    font-weight: 900;
+    font-size: 34px;
+    line-height: 100%;
+  }
+
+  &__message {
+    cursor: default;
+    max-width: 300px;
+    text-align: center;
+    margin-bottom: 5px;
+    color: var(--font-first-color);
+    font-family: var(--font-family);
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 100%;
+  }
+
+  &__btn-group {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+  }
+
+  &__delete-btn {
+    cursor: pointer;
+    width: max-content;
+    padding: 10px 20px;
+
+    display: flex;
+    align-self: center;
+
+    font-size: 14px;
+    font-weight: 800;
+    line-height: 100%;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 700;
+
+    border-radius: 10px;
+    border-color: var(--seventh-color);
+    color: #fff;
+    box-shadow:
+      0 0 40px 40px var(--sixth-color) inset,
+      0 0 0 0 var(--seventh-color);
+    transition: all 150ms ease-in-out;
+
+    &:hover {
+      color: var(--sixth-color);
+      box-shadow:
+        0 0 10px 0 var(--sixth-color) inset,
+        0 0 10px 4px var(--seventh-color);
+    }
+  }
+  &__error-text-block {
+    width: 100%;
+    min-height: 15px;
+    text-align: center;
+    color: var(--eighth-color);
+    font-family: var(--font-family);
+    font-weight: 800;
+    font-size: 14px;
+    line-height: 100%;
+  }
+}
